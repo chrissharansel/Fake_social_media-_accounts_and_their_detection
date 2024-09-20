@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Users</title>
+    <style>
+        body{
+            background-color:antiquewhite;
+            background-position: center;
+            background-repeat: no-repeat;
+           
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color:antiquewhite;
+            background-size: cover;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100%;
+            display: flex;
+
+        
+        }
+        /* Optional styling for better appearance */
+        
+        header {
+            background-color:orange;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        details {
+            border: 1px solid #8ee612;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 16px;
+            color: black;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: black;
+        }
+        h1 {
+            color: black;
+        }
+        
+    
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background-color:antiquewhite;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Top 10 Users with Lowest Confidence</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Confidence of Being Fake</th>
+                <th>No Of Times Checked</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in top_users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ 100 - user.confidence }}%</td>
+                <td>{{ user.test_count }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

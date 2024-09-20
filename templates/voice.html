@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Classification</title>
+    <style>
+        body{
+            background-color:antiquewhite;
+            background-position: center;
+            background-repeat: no-repeat;
+           
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color:antiquewhite;
+            background-size: cover;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100%;
+            display: flex;
+
+        
+        }
+        /* Optional styling for better appearance */
+        
+        header {
+            background-color:orange;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        details {
+            border: 1px solid #8ee612;
+            border-radius: 4px;
+            padding: 8px;
+            margin-bottom: 16px;
+            color: black;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: black;
+        }
+        h1 {
+            color: black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Audio Classification</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    <p>{{ prediction_text }}</p>
+</body>
+
+</html>
